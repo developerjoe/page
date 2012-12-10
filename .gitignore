@@ -1,0 +1,16 @@
+com.springsource.sts.config.flow.prefs
+.classpath
+.project
+.jsdtscope
+.settings/org.eclipse.ajdt.core.prefs
+.settings/org.eclipse.core.resources.prefs
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.m2e.core.prefs
+.settings/org.eclipse.wst.common.component
+.settings/org.eclipse.wst.common.project.facet.core.xml
+.settings/org.eclipse.wst.jsdt.ui.superType.container
+.settings/org.eclipse.wst.jsdt.ui.superType.name
+.settings/org.springframework.ide.eclipse.roo.core.prefs
+.springBeans
+target
+log.roo

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_terzieva_page_domain_Term" items="${terms}" z="MdLdk8bOncEAU9ysehezseUq+4k=">
+        <table:table data="${terms}" id="l_org_terzieva_page_domain_Term" path="/terms" z="7qVBG1bfi4EBU5dWbeAHlmg57E8=">
+            <table:column id="c_org_terzieva_page_domain_Term_termKey" property="termKey" z="VbL+au9zzglT6DXf8NSpZMusx3A="/>
+            <table:column id="c_org_terzieva_page_domain_Term_text" property="text" z="cMv34WZIqJDEayWEv9pN7gSfiKY="/>
+        </table:table>
+    </page:list>
+</div>
