@@ -4,5 +4,6 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_org_terzieva_page_domain_Player" modelAttribute="player" path="/players" versionField="Version" z="fX+0x1vLVHOn/WQeKYyS7Z5OIfQ=">
         <field:input field="firstName" id="c_org_terzieva_page_domain_Player_firstName" required="true" z="7rOCyTVlFGsQUs9EircHkS05um4="/>
+        <field:input field="email" id="c_org_terzieva_page_domain_Player_email" required="true" validationMessageCode="field_invalid_email" z="zXJ1Ivo1e5N2fpQw6bla2NFMbG8="/>
     </form:update>
 </div>

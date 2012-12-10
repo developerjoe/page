@@ -7,6 +7,14 @@ import org.terzieva.page.domain.Player;
 
 privileged aspect Player_Roo_JavaBean {
     
+    public String Player.getEmail() {
+        return this.email;
+    }
+    
+    public void Player.setEmail(String email) {
+        this.email = email;
+    }
+    
     public String Player.getFirstName() {
         return this.firstName;
     }

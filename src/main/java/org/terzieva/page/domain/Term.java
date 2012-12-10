@@ -1,6 +1,7 @@
 package org.terzieva.page.domain;
 
 import javax.persistence.Column;
+import javax.persistence.NoResultException;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -19,4 +20,16 @@ public class Term {
     @NotNull
     @Size(max = 3000)
     private String text;
+    
+    public static String textFromKey(String key)
+    {
+		try
+		{
+			return Term.findTermsByTermKeyEquals(key).getSingleResult().getText();
+		}
+		catch(NoResultException e)
+		{
+			return "";
+		}
+    }
 }
