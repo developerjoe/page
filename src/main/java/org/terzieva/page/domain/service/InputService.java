@@ -12,10 +12,10 @@ public class InputService {
 	@Autowired
 	private InstanceFactory factory;
 	
-	public String input(Message<byte[]> message, @Header("ip_connectionId") String connectionId)
+	public void input(Message<byte[]> message, @Header("ip_connectionId") String connectionId)
 	{
 		String input = new String(message.getPayload());
-		return factory.getInstance(connectionId).interpret(input);
+		factory.getInstance(connectionId).interpret(input);
 	}
 	
 }

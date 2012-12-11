@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.serializer.Serializer;
 import org.springframework.integration.ip.tcp.connection.AbstractTcpConnectionInterceptor;
 import org.springframework.integration.ip.tcp.connection.TcpConnection;
-import org.springframework.integration.message.GenericMessage;
 import org.terzieva.page.connection.Instance;
 import org.terzieva.page.connection.InstanceFactory;
 
@@ -26,7 +25,7 @@ public class ConnectionInterceptor extends AbstractTcpConnectionInterceptor {
 		try {
 			/* Sends a request to the instance's interpreter to determine
 			 * the initial output when first connecting. */
-			super.send(new GenericMessage<String>(instance.interpret("")));
+			instance.start();
 		} catch (Exception e) {
 			logger.error("Could not send message for initial connection",e);
 		}
@@ -36,7 +35,7 @@ public class ConnectionInterceptor extends AbstractTcpConnectionInterceptor {
 	public void addNewConnection(TcpConnection connection) 
 	{
 		super.addNewConnection(connection);
-		instance = factory.getInstance(connection.getConnectionId());
+		instance = factory.createInstance(connection);
 	}
 	
 	@Override

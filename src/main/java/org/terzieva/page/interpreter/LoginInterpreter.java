@@ -6,33 +6,20 @@ import org.slf4j.LoggerFactory;
 import org.terzieva.page.domain.Player;
 import org.terzieva.page.domain.Term;
 
-public class LoginInterpreter implements Interpreter {
+public class LoginInterpreter extends AbstractInterpreter {
 
+	@SuppressWarnings("unused")
 	private static final Logger logger = LoggerFactory.getLogger(LoginInterpreter.class);
 	
-	private enum Stage { INTRO, EMAIL };
-	private Stage stage;
-	
-	public LoginInterpreter()
+	@Override
+	public void start()
 	{
-		stage = Stage.INTRO;
+		send(showIntro());
 	}
 	
 	@Override
-	public String interpret(String message) {
-		if(stage == Stage.INTRO)
-		{
-			stage = Stage.EMAIL;
-			return showIntro();
-		}
-		else if(stage == Stage.EMAIL)
-		{
-			return handleEmail(message);
-		}
-		else
-		{
-			return "Stage Not Implemented";
-		}
+	public void interpret(String message) {
+		send(handleEmail(message));
 	}
 	
 	private String showIntro()
@@ -44,6 +31,7 @@ public class LoginInterpreter implements Interpreter {
 	
 	private String handleEmail(String email)
 	{
+		String message;
 		boolean isEmailValid = EmailValidator.getInstance().isValid(email);
 		
 		if(!isEmailValid)
@@ -52,13 +40,26 @@ public class LoginInterpreter implements Interpreter {
 		Player player = Player.findByEmail(email);
 		
 		if(player != null)
-			return Term.textFromKey("INTRO_EMAIL_EXISTS");
+		{
+			message = Term.textFromKey("INTRO_EMAIL_EXISTS");
+			// transition to a new interpreter
+			interpreter = new AreaInterpreter();
+			return message;
+		}
 		
+		// if you have not returned yet create a new player
 		player = new Player();
 		player.setEmail(email);
 		player.persist();
 		player.flush();
 		
-		return Term.textFromKey("INTRO_EMAIL_CREATING");
+		message = Term.textFromKey("INTRO_EMAIL_CREATING");
+		
+		// transition to a new interpreter
+		interpreter = new AreaInterpreter();
+		
+		return message;
+		
 	}
+	
 }
