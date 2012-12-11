@@ -11,5 +11,13 @@
             <menu:item id="i_term_new" messageCode="global_menu_new" url="/terms?form" z="wgiKkyRDO0HpHhgEDihRQzUhP3k="/>
             <menu:item id="i_term_list" messageCode="global_menu_list" url="/terms?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ev5ds/cpGL+OtBUv9Kd6x/Ioqak="/>
         </menu:category>
+        <menu:category id="c_areaexit" z="h6dfsoUNsLN+eaNBe2UJXT5k0bE=">
+            <menu:item id="i_areaexit_new" messageCode="global_menu_new" url="/areaexits?form" z="7LmwTsTI/YEW+euoiZov0LFsQFA="/>
+            <menu:item id="i_areaexit_list" messageCode="global_menu_list" url="/areaexits?page=1&amp;size=${empty param.size ? 10 : param.size}" z="RCum8/3i7fcxbsVFgEnfmkAhgYk="/>
+        </menu:category>
+        <menu:category id="c_area" z="iS7Vpexh3RxjWLqosFEDilbMD7k=">
+            <menu:item id="i_area_new" messageCode="global_menu_new" url="/areas?form" z="nUCyaKOQhlvbWKgDghur8d6AXbM="/>
+            <menu:item id="i_area_list" messageCode="global_menu_list" url="/areas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Ctslq7uAHXyhb01MpxHhzB5nZcE="/>
+        </menu:category>
     </menu:menu>
 </div>

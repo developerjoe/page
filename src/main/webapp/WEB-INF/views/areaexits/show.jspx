@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_org_terzieva_page_domain_AreaExit" object="${areaexit}" path="/areaexits" z="vpGdlsPPc/v4gcAI5Fbx237I2l8=">
+        <field:display field="fromArea" id="s_org_terzieva_page_domain_AreaExit_fromArea" object="${areaexit}" z="n17eJogZHWQuQvPFr0aXYX3zOig="/>
+        <field:display field="toArea" id="s_org_terzieva_page_domain_AreaExit_toArea" object="${areaexit}" z="uBTDjzpESSVZQO5W+vRM4U4oLiw="/>
+        <field:display field="direction" id="s_org_terzieva_page_domain_AreaExit_direction" object="${areaexit}" z="D5xDbVOaohfVU2W7SuQp5FCdxeU="/>
+    </page:show>
+</div>
