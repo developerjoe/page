@@ -10,7 +10,7 @@ import org.terzieva.page.traversal.Direction;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord
+@RooJpaActiveRecord(finders = { "findAreaExitsByFromArea" })
 public class AreaExit {
 
     @OneToOne
