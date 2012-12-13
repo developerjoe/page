@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
+import org.terzieva.page.domain.Area;
 import org.terzieva.page.domain.Player;
 import org.terzieva.page.web.PlayerController;
 
@@ -86,6 +87,7 @@ privileged aspect PlayerController_Roo_Controller {
     
     void PlayerController.populateEditForm(Model uiModel, Player player) {
         uiModel.addAttribute("player", player);
+        uiModel.addAttribute("areas", Area.findAllAreas());
     }
     
     String PlayerController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

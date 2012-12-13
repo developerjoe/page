@@ -5,11 +5,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.terzieva.page.domain.Player;
 import org.terzieva.page.domain.Term;
+import org.terzieva.page.game.Context;
 
 public class LoginInterpreter extends AbstractInterpreter {
 
+	private Context context;
+	
 	@SuppressWarnings("unused")
 	private static final Logger logger = LoggerFactory.getLogger(LoginInterpreter.class);
+	
+	public LoginInterpreter()
+	{
+		context = new Context();
+	}
 	
 	@Override
 	public void start()
@@ -43,7 +51,7 @@ public class LoginInterpreter extends AbstractInterpreter {
 		{
 			message = Term.textFromKey("INTRO_EMAIL_EXISTS");
 			// transition to a new interpreter
-			interpreter = new AreaInterpreter();
+			transitionInterpreter(player);
 			return message;
 		}
 		
@@ -51,15 +59,19 @@ public class LoginInterpreter extends AbstractInterpreter {
 		player = new Player();
 		player.setEmail(email);
 		player.persist();
-		player.flush();
 		
 		message = Term.textFromKey("INTRO_EMAIL_CREATING");
 		
 		// transition to a new interpreter
-		interpreter = new AreaInterpreter();
+		transitionInterpreter(player);
 		
 		return message;
-		
+	}
+	
+	private void transitionInterpreter(Player player)
+	{
+		context.player = player;
+		interpreter = new AreaInterpreter(context);
 	}
 	
 }

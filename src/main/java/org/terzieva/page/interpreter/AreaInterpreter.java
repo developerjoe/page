@@ -25,8 +25,6 @@ public class AreaInterpreter extends AbstractInterpreter implements Initializing
 	
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		context = new Context();
-		
 		commands = new HashMap<String, Command>();
 		commands.put("NORTH",commandFactory.getCommand("navigationCommand"));
 		commands.put("SOUTH",commandFactory.getCommand("navigationCommand"));
@@ -38,8 +36,10 @@ public class AreaInterpreter extends AbstractInterpreter implements Initializing
 		commands.put("SOUTHWEST",commandFactory.getCommand("navigationCommand"));
 	}
 	
-	public AreaInterpreter()
+	public AreaInterpreter(Context context)
 	{
+		this.context = context;
+		
 		aliases = new HashMap<String, String>();
 		aliases.put("N","NORTH");
 		aliases.put("S","SOUTH");
@@ -75,10 +75,15 @@ public class AreaInterpreter extends AbstractInterpreter implements Initializing
 	{
 		send("Area Interpreter accessed. Ready to move you to the world.");
 		
-		context.area = Area.findArea(1L);
-		context.exits = new ExitList(AreaExit.findAreaExitsByFromArea(context.area).getResultList());
+		if(context.player.getCurrentArea() == null)
+		{
+			context.player.setCurrentArea(Area.findArea(1L));
+			context.player = context.player.merge();
+		}
+			
+		context.exits = new ExitList(AreaExit.findAreaExitsByFromArea(context.player.getCurrentArea()).getResultList());
 		
-		send(AreaTemplate.render(context.area,context.exits));
+		send(AreaTemplate.render(context.player.getCurrentArea(),context.exits));
 	}
 
 }

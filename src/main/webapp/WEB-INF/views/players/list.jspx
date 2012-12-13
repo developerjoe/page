@@ -6,6 +6,7 @@
         <table:table data="${players}" id="l_org_terzieva_page_domain_Player" path="/players" z="xCtid6FNR0pfRwzbCUKJghc45Tw=">
             <table:column id="c_org_terzieva_page_domain_Player_firstName" property="firstName" z="y6rDIy1ol6enFrLQ7hDcRgKCb8I="/>
             <table:column id="c_org_terzieva_page_domain_Player_email" property="email" z="Sl8237MvaDTf+J8yYGxypLS++Z8="/>
+            <table:column id="c_org_terzieva_page_domain_Player_currentArea" property="currentArea" z="PC5fZK+BuD5j3D+pUNP2m6alavo="/>
         </table:table>
     </page:list>
 </div>

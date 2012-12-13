@@ -3,6 +3,7 @@
 
 package org.terzieva.page.domain;
 
+import org.terzieva.page.domain.Area;
 import org.terzieva.page.domain.Player;
 
 privileged aspect Player_Roo_JavaBean {
@@ -21,6 +22,14 @@ privileged aspect Player_Roo_JavaBean {
     
     public void Player.setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+    
+    public Area Player.getCurrentArea() {
+        return this.currentArea;
+    }
+    
+    public void Player.setCurrentArea(Area currentArea) {
+        this.currentArea = currentArea;
     }
     
 }

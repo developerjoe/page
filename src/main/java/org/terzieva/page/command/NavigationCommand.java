@@ -19,10 +19,11 @@ public class NavigationCommand implements Command {
 			return "Could not move in that direction.";
 		else
 		{
-			context.area = Area.findArea(exit.getToArea().getId());
-			context.exits = new ExitList(AreaExit.findAreaExitsByFromArea(context.area).getResultList());
+			context.player.setCurrentArea(Area.findArea(exit.getToArea().getId()));
+			context.exits = new ExitList(AreaExit.findAreaExitsByFromArea(context.player.getCurrentArea()).getResultList());
+			context.player = context.player.merge();
 			
-			return AreaTemplate.render(context.area,context.exits);
+			return AreaTemplate.render(context.player.getCurrentArea(),context.exits);
 		}
 			
 	}
