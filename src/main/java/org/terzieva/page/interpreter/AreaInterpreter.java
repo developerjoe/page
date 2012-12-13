@@ -34,6 +34,7 @@ public class AreaInterpreter extends AbstractInterpreter implements Initializing
 		commands.put("NORTHWEST",commandFactory.getCommand("navigationCommand"));
 		commands.put("SOUTHEAST",commandFactory.getCommand("navigationCommand"));
 		commands.put("SOUTHWEST",commandFactory.getCommand("navigationCommand"));
+		commands.put("LOOK",commandFactory.getCommand("lookCommand"));
 	}
 	
 	public AreaInterpreter(Context context)
