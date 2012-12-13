@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-ip="http://www.springframework.org/schema/integration/ip"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.2.xsd
+		http://www.springframework.org/schema/integration/ip http://www.springframework.org/schema/integration/ip/spring-integration-ip-2.2.xsd">
+
+	<bean id="interceptorFactoryChain" class="org.springframework.integration.ip.tcp.connection.TcpConnectionInterceptorFactoryChain">
+		<property name="interceptors">
+	   		<array>
+	    		<bean class="org.terzieva.page.tcp.ConnectionInterceptorFactory"/>
+	    	</array>
+		</property>
+	</bean>
+
+	<int-ip:tcp-connection-factory id="server" type="server" port="4000" interceptor-factory-chain="interceptorFactoryChain" />
+	
+	<int:channel id="input" />
+  	<int:channel id="output" />
+	
+    <int:service-activator input-channel="input" ref="inputService" output-channel="output" />
+
+  	<int-ip:tcp-inbound-channel-adapter channel="input" connection-factory="server" />
+   	<int-ip:tcp-outbound-channel-adapter channel="output" connection-factory="server"/>
+	
+</beans>

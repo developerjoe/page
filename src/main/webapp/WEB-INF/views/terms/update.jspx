@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_org_terzieva_page_domain_Term" modelAttribute="term" path="/terms" versionField="Version" z="OCEyo14ywcsY78TCvUiav3nNxLQ=">
+        <field:input field="termKey" id="c_org_terzieva_page_domain_Term_termKey" required="true" z="G9JJ/b7M6c0JMTfqCBiUOg6drEg="/>
+        <field:textarea field="text" id="c_org_terzieva_page_domain_Term_text" required="true" z="yp9dlkNu2SIz5tHMh9AzKlFGlYo="/>
+    </form:update>
+</div>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_org_terzieva_page_domain_Area" object="${area}" path="/areas" z="fGSQ3Q72yMNLRZ9rEWmwtR2ZuGM=">
+        <field:display field="name" id="s_org_terzieva_page_domain_Area_name" object="${area}" z="/cM8JsY0twmW4GYHmkL2sVy/Px8="/>
+        <field:display field="description" id="s_org_terzieva_page_domain_Area_description" object="${area}" z="8s0uUzlnoamRC0LLODsYoEi6E6I="/>
+    </page:show>
+</div>
