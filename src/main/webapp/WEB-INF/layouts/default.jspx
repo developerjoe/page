@@ -18,11 +18,17 @@
   	<body class="tundra spring">
    		<div id="wrapper">
 		    <tiles:insertAttribute name="header" ignore="true" />
-		    <tiles:insertAttribute name="menu" ignore="true" />   
-		    <div id="main">
-	    		<tiles:insertAttribute name="body"/> 
-		    	<tiles:insertAttribute name="footer" ignore="true"/>
+		    <tiles:insertAttribute name="menu" ignore="true" />
+		    <spring:url value="/resources/images/ContentTop.png" var="contentTopImage"/>
+			<spring:url value="/resources/images/ContentBottom.png" var="contentBottomImage"/>
+			<div class="MainWrapper">
+			    <img src="${contentTopImage}" style="float:left;" />
+			    <div id="main">
+		    		<tiles:insertAttribute name="body"/> 
+			    </div>
+			    <img src="${contentBottomImage}" style="float:left;" />
 		    </div>
+		    <tiles:insertAttribute name="footer" ignore="true"/>
 		</div>
 	</body>
 </html>

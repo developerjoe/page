@@ -1,0 +1,19 @@
+body { background:url('../images/Background.png'); font-family:Helvetica; }
+ul { list-style-type:none; margin:0px; padding:0px; }
+
+.clear {  }
+
+.MainWrapper { margin:0 0 0 0; padding:8px 0 0 0; }
+#menu { float:left; margin:0 40px 0 0; }
+#main { float:left; width:720px; margin:0 0 0 0; background:url(../images/ContentBody.png); padding:20px; }
+
+#main label { display:block; margin-bottom:5px; }
+#main input[type=text] { width:400px; }
+#main textarea { width:400px; height:200px; }
+
+.MenuBox { width:233px; padding:10px 10px 10px 10px; margin:0 0 0 0; }
+.MenuBox h2 { margin:0 0 10px 0; }
+.MenuBox a { color:#a1a1a1; text-decoration:none; line-height:1.4em; }
+.MenuBox.content { background:url(../images/MenuBoxMiddle.png); float:left; }
+.MenuBox .bottomImage { float:left; padding:0 0 15px 0; }
+.MenuBox li { padding:0px; margin:0px; } 

@@ -17,7 +17,7 @@
     <c:if test="${not empty messageCode}">
       <spring:message code="${messageCode}" var="label" arguments="${label}" htmlEscape="false" />
     </c:if>
-
+	
     <li id="${fn:escapeXml(id)}">
       <spring:url value="${url}" var="menu_item_url"/>
       <a href="${menu_item_url}" title="${fn:escapeXml(label)}">

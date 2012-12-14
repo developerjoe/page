@@ -12,14 +12,23 @@
 			<spring:message code="menu_category_${fn:toLowerCase(fn:substringAfter(id,'_'))}_label" var="label" htmlEscape="false"/>
 		</c:if>
 		
-		<li id="${fn:escapeXml(id)}">
-			<h2>
-				<c:out value="${label}" />
-			</h2>
-			<ul>
-				<jsp:doBody />
-			</ul>
-		</li>
+		<spring:url value="/resources/images/MenuBoxTop.png" var="menuTopImage"/>
+		<spring:url value="/resources/images/MenuBoxBottom.png" var="menuBottomImage"/>
+		
+		<div class="MenuBox">
+			<img src="${menuTopImage}" style="float:left;" />
+			<div class="MenuBox content">
+				<li id="${fn:escapeXml(id)}">
+					<h2>
+						<c:out value="${label}" />
+					</h2>
+					<ul class="middle">
+						<jsp:doBody />
+					</ul>
+				</li>
+			</div>
+			<img src="${menuBottomImage}" class="bottomImage" />
+		</div>
 	
 	</c:if>
 </jsp:root>
