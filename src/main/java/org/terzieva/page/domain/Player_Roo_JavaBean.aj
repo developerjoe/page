@@ -32,4 +32,20 @@ privileged aspect Player_Roo_JavaBean {
         this.currentArea = currentArea;
     }
     
+    public Boolean Player.getIsOnline() {
+        return this.isOnline;
+    }
+    
+    public void Player.setIsOnline(Boolean isOnline) {
+        this.isOnline = isOnline;
+    }
+    
+    public String Player.getConnectionId() {
+        return this.connectionId;
+    }
+    
+    public void Player.setConnectionId(String connectionId) {
+        this.connectionId = connectionId;
+    }
+    
 }

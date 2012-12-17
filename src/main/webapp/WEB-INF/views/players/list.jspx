@@ -7,6 +7,8 @@
             <table:column id="c_org_terzieva_page_domain_Player_firstName" property="firstName" z="y6rDIy1ol6enFrLQ7hDcRgKCb8I="/>
             <table:column id="c_org_terzieva_page_domain_Player_email" property="email" z="Sl8237MvaDTf+J8yYGxypLS++Z8="/>
             <table:column id="c_org_terzieva_page_domain_Player_currentArea" property="currentArea" z="PC5fZK+BuD5j3D+pUNP2m6alavo="/>
+            <table:column id="c_org_terzieva_page_domain_Player_isOnline" property="isOnline" z="Ea7PCVytdDCulfDftHOwD3iKJ/I="/>
+            <table:column id="c_org_terzieva_page_domain_Player_connectionId" property="connectionId" z="PLxDm1eMw9+otIQOpWGex8jwC84="/>
         </table:table>
     </page:list>
 </div>

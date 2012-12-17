@@ -6,5 +6,7 @@
         <field:input field="firstName" id="c_org_terzieva_page_domain_Player_firstName" required="true" z="7rOCyTVlFGsQUs9EircHkS05um4="/>
         <field:input field="email" id="c_org_terzieva_page_domain_Player_email" required="true" validationMessageCode="field_invalid_email" z="zXJ1Ivo1e5N2fpQw6bla2NFMbG8="/>
         <field:select field="currentArea" id="c_org_terzieva_page_domain_Player_currentArea" itemValue="id" items="${areas}" path="/areas" z="dme926T/M9CoY0Hu/NuNK9SKys0="/>
+        <field:checkbox field="isOnline" id="c_org_terzieva_page_domain_Player_isOnline" z="tkYymJvpPrNCc2Odaz0J4E4WvII="/>
+        <field:input field="connectionId" id="c_org_terzieva_page_domain_Player_connectionId" z="2Vgq6skTyM2idBQSsh3WZGE7khU="/>
     </form:update>
 </div>

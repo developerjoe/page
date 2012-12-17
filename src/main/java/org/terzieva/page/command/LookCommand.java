@@ -1,6 +1,9 @@
 package org.terzieva.page.command;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
+import org.terzieva.page.domain.Player;
 import org.terzieva.page.game.Context;
 import org.terzieva.page.template.AreaTemplate;
 
@@ -9,7 +12,10 @@ public class LookCommand implements Command {
 
 	@Override
 	public String interpret(String input, Context context) {
-		return AreaTemplate.render(context.player.getCurrentArea(),context.exits);
+		
+		List<Player> players = Player.findNearbyOnlinePlayers(context.player).getResultList();
+		
+		return AreaTemplate.render(context.player.getCurrentArea(),context.exits,players);
 	}
 
 }

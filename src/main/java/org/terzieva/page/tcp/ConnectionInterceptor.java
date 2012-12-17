@@ -9,6 +9,7 @@ import org.springframework.integration.ip.tcp.connection.AbstractTcpConnectionIn
 import org.springframework.integration.ip.tcp.connection.TcpConnection;
 import org.terzieva.page.connection.Instance;
 import org.terzieva.page.connection.InstanceFactory;
+import org.terzieva.page.domain.Player;
 
 @Configurable
 public class ConnectionInterceptor extends AbstractTcpConnectionInterceptor {
@@ -41,6 +42,11 @@ public class ConnectionInterceptor extends AbstractTcpConnectionInterceptor {
 	@Override
 	public void removeDeadConnection(TcpConnection connection) {
 		factory.removeInstance(connection.getConnectionId());
+		
+		Player player = Player.findPlayersByConnectionIdEquals(connection.getConnectionId()).getSingleResult();
+		player.setIsOnline(false);
+		player = player.merge();
+		
 		super.removeDeadConnection(connection);
 	}
 	

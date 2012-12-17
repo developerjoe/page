@@ -67,7 +67,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Player, String> ApplicationConversionServiceFactoryBean.getPlayerToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<org.terzieva.page.domain.Player, java.lang.String>() {
             public String convert(Player player) {
-                return new StringBuilder().append(player.getEmail()).append(' ').append(player.getFirstName()).toString();
+                return new StringBuilder().append(player.getEmail()).append(' ').append(player.getFirstName()).append(' ').append(player.getConnectionId()).toString();
             }
         };
     }

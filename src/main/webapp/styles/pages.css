@@ -3,6 +3,8 @@ ul { list-style-type:none; margin:0px; padding:0px; }
 
 .clear {  }
 
+#wrapper { width:1060px; }
+
 .MainWrapper { margin:0 0 0 0; padding:8px 0 0 0; }
 #menu { float:left; margin:0 40px 0 0; }
 #main { float:left; width:720px; margin:0 0 0 0; background:url(../images/ContentBody.png); padding:20px; }

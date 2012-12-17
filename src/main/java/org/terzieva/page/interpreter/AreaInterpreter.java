@@ -1,6 +1,7 @@
 package org.terzieva.page.interpreter;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.InitializingBean;
@@ -11,6 +12,7 @@ import org.terzieva.page.command.Command;
 import org.terzieva.page.command.CommandFactory;
 import org.terzieva.page.domain.Area;
 import org.terzieva.page.domain.AreaExit;
+import org.terzieva.page.domain.Player;
 import org.terzieva.page.game.Context;
 import org.terzieva.page.template.AreaTemplate;
 
@@ -84,7 +86,9 @@ public class AreaInterpreter extends AbstractInterpreter implements Initializing
 			
 		context.exits = new ExitList(AreaExit.findAreaExitsByFromArea(context.player.getCurrentArea()).getResultList());
 		
-		send(AreaTemplate.render(context.player.getCurrentArea(),context.exits));
+		List<Player> players = Player.findNearbyOnlinePlayers(context.player).getResultList();
+		
+		send(AreaTemplate.render(context.player.getCurrentArea(),context.exits,players));
 	}
 
 }

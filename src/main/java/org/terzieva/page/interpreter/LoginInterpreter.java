@@ -71,6 +71,10 @@ public class LoginInterpreter extends AbstractInterpreter {
 	private void transitionInterpreter(Player player)
 	{
 		context.player = player;
+		context.player.setConnectionId(connection.getConnectionId());
+		context.player.setIsOnline(true);
+		context.player = context.player.merge();
+		
 		interpreter = new AreaInterpreter(context);
 	}
 	

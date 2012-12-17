@@ -5,9 +5,26 @@ package org.terzieva.page.domain;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import org.terzieva.page.domain.Area;
 import org.terzieva.page.domain.Player;
 
 privileged aspect Player_Roo_Finder {
+    
+    public static TypedQuery<Player> Player.findPlayersByConnectionIdEquals(String connectionId) {
+        if (connectionId == null || connectionId.length() == 0) throw new IllegalArgumentException("The connectionId argument is required");
+        EntityManager em = Player.entityManager();
+        TypedQuery<Player> q = em.createQuery("SELECT o FROM Player AS o WHERE o.connectionId = :connectionId", Player.class);
+        q.setParameter("connectionId", connectionId);
+        return q;
+    }
+    
+    public static TypedQuery<Player> Player.findPlayersByCurrentArea(Area currentArea) {
+        if (currentArea == null) throw new IllegalArgumentException("The currentArea argument is required");
+        EntityManager em = Player.entityManager();
+        TypedQuery<Player> q = em.createQuery("SELECT o FROM Player AS o WHERE o.currentArea = :currentArea", Player.class);
+        q.setParameter("currentArea", currentArea);
+        return q;
+    }
     
     public static TypedQuery<Player> Player.findPlayersByEmailEquals(String email) {
         if (email == null || email.length() == 0) throw new IllegalArgumentException("The email argument is required");

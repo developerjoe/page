@@ -6,5 +6,7 @@
         <field:display field="firstName" id="s_org_terzieva_page_domain_Player_firstName" object="${player}" z="cH7bsW0jZgDk63ZmBPDsbGZYpDU="/>
         <field:display field="email" id="s_org_terzieva_page_domain_Player_email" object="${player}" z="HgqEh3SNdfOIrho832gM+3R/QLk="/>
         <field:display field="currentArea" id="s_org_terzieva_page_domain_Player_currentArea" object="${player}" z="R/k3MriOWP+MtrKuksJN9dZAA7c="/>
+        <field:display field="isOnline" id="s_org_terzieva_page_domain_Player_isOnline" object="${player}" z="x1lMoXggR1Jdl56GvChsUUc63o0="/>
+        <field:display field="connectionId" id="s_org_terzieva_page_domain_Player_connectionId" object="${player}" z="LSnZHKuL1XIo/ATUr9zH84R3GdE="/>
     </page:show>
 </div>
